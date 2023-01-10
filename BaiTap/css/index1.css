@@ -1,0 +1,28 @@
+header{
+    height: auto;
+}
+header>img{
+    width: auto;
+    height: auto;
+}
+nav>h1{
+    text-align: center;
+    color: royalblue;
+}
+.container>div>*{
+    height: 400px;
+    background-color: bisque;
+}
+form>h3{
+    color: royalblue;
+}
+.container>div>article{
+    background-color: green;
+}
+.container>div>aside{
+    background-color: pink;
+}
+aside>img{
+    width: auto;
+    height: 400px;
+}
