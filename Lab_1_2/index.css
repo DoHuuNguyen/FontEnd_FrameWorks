@@ -1,0 +1,42 @@
+.container {
+  background-color: white;
+  border-radius: 10px;
+  width: 90%;
+  height: auto;
+}
+img.anhcc {
+  width: 350px;
+  height: 170px;
+}
+img.anhbang {
+  width: 350px;
+  height: 170px;
+}
+body {
+  background-image: url("img/backgroud.jpg");
+}
+img.banner{
+  width: 100%;
+}
+button.nut{
+  width: 250px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+div.mau{
+  color: orangered;
+  font-size: 20px;
+}span.mau{
+  color: blue;
+  font-weight: bold;
+}
+label{
+  font-weight: bold;
+  font-size: 12px;
+}
+h1{
+  font-weight: bold;
+  color: blue;
+  font-size: 33px;
+}
