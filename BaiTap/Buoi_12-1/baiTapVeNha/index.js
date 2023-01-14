@@ -24,9 +24,9 @@ function clickHere() {
       let gt = document.getElementById("gender").value;
 
       if (gt === "0") {
-        swal("Chúc Mừng " + hovaten, "Đã đăng ký thành công", "success");
+        swal("Chúc Mừng Ong" + hovaten, "Đã đăng ký thành công", "success");
       } else {
-        swal("Xin lỗi", "Bạn phải là nam", "error");
+        swal("Xin lỗi Ba " + hovaten, "Bạn phải là nam", "error");
       }
     } else {
       swal("Xin lỗi", "Bạn chưa đủ tuổi", "error");
