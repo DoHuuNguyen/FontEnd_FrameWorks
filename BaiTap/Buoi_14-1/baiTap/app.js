@@ -21,5 +21,16 @@ info.controller("sonDauBuoiController", function ($scope) {
     sdt: "01231231",
     nganh: "NGu",
   };
+  $scope.infos = [
+    { ten: "Nguyen", tuoi: "20" },
+    {
+      ten: "Son Dau buoi",
+      tuoi: "21",
+    },
+    {
+      ten: "son dau cu",
+      tuoi: "19",
+    },
+  ];
 });
 //

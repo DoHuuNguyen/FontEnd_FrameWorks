@@ -58,6 +58,16 @@
           </tbody>
         </table>
       </div>
+      <div ng-controller="sonDauBuoiController">
+        <table class="table">
+          <tbody>
+            <tr ng-repeat="if in infos">
+              <td>{{if.ten}}</td>
+              <td>{{if.tuoi}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </body>
 </html>
