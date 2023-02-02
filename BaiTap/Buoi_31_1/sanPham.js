@@ -20,4 +20,23 @@ sanPham.controller("SanPhamCtrl", function ($scope) {
       km: "có",
     },
   ];
+  $scope.count = 0;
+  $scope.myFunc = function () {
+    $scope.count++;
+  };
+  $scope.sayHello = function () {
+    $scope.hi = $scope.test;
+  };
+  $scope.Cong = function () {
+    $scope.kq = $scope.Num1 + $scope.Num2;
+  };
+  $scope.Tru = function () {
+    $scope.kq = $scope.Num1 - $scope.Num2;
+  };
+  $scope.Nhan = function () {
+    $scope.kq = $scope.Num1 * $scope.Num2;
+  };
+  $scope.Chia = function () {
+    $scope.kq = $scope.Num1 / $scope.Num2;
+  };
 });
