@@ -1,0 +1,32 @@
+
+.dongTren{
+    font-size: 15px;
+}
+.dongTren>nav>ul>li>a{
+    color: red;
+}
+.dongduoi{
+    font-size: 30px;
+}
+ul>li>a:hover{
+    background-color: wheat;
+}
+ul>li>a{
+    border-radius: 30px;
+}
+#imgLogo>img{
+    margin: 20px;
+    height: 90px;
+}
+/* Hết nav */
+/* Header */
+header{
+    height: 570px;
+    background-image: url("img/header1.jpg");
+    background-size: 100%;
+}
+header>img{
+    margin: 5%;
+    width: 90%;
+    height: 700px;
+}

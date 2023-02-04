@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <script src="controller/trangchuController.js"></script>
+    <script src="controller/gioithieuController.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div ng-app="app-route">
+      <header>đây là header</header>
+      <nav>
+        <ul>
+          <li><a href="#!/">Trang chủ </a></li>
+          <li><a href="#!/gioithieu">Giới thiệu</a></li>
+          <li><a href="#">Tin tức</a></li>
+        </ul>
+      </nav>
+      <main>
+        <!-- định nghĩa vị trí mà nội dung sẽ render ra -->
+        <div ng-view></div>
+        <footer>đây là footer</footer>
+      </main>
+    </div>
+    <script>
+      //nơi để điều hướng route
+      angular
+        .module("app-route", ["ngRoute"])
+        .config(function ($routeProvider) {
+          $routeProvider
+            .when("/", {
+              templateUrl: "view/trangchu.html",
+              controller: trangchuController,
+            })
+            .when("/gioithieu", {
+              templateUrl: "view/gioithieu.html",
+              controller: gioithieuController,
+            });
+        });
+    </script>
+  </body>
+</html>
