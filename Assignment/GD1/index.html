@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js.js"></script>
+    <link rel="stylesheet" href="css.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div ng-app="myApp">
+      <div class="row">
+        <div class="col-xl-1"></div>
+        <div class="col-xl-5" id="imgLogo">
+          <img src="img/VNA_logo_vn.png" alt="" srcset="" />
+        </div>
+        <div class="col-xl-6 col-12">
+          <div class="row">
+            <div class="dongTren">
+              <nav>
+                <ul class="nav justify-content-center">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"
+                      >Trợ giúp</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Đăng nhập</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Đăng Ký</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link"></a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="row">
+            <div class="dongduoi">
+              <nav>
+                <ul class="nav justify-content-center">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#!/"
+                      >Trang chủ</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="lienhe.html">Liên hệ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="datve.html">Đặt Vé</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link"></a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <header></header>
+      <main>
+        <div ng-views></div>
+      </main>
+      <footer>
+        <div class="row" style="background-color: antiquewhite">
+          <div class="col-3"></div>
+          <div class="col-2">
+            <div class="logo-skytrax-img">
+              <img
+                src="img/4-Star_Metallic_150x150.webp"
+                alt=" Vietnam Airlines is proud to be leading 4-star global airline "
+              />
+            </div>
+          </div>
+          <div
+            class="col-6"
+            style="
+              margin-top: 45px;
+              margin-left: 0;
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+                sans-serif;
+            "
+          >
+            <strong style="color: darkturquoise"
+              >Vietnam Airlines tự hào là Hãng hàng không quốc tế 4 sao Xin
+              trân</strong
+            ><br />
+            trọng cảm ơn sự đồng hành của Quý khách và bạn hàng!
+          </div>
+        </div>
+        <div class="row" style="background-color: rgb(32, 100, 178)">
+          <div class="col-xl-1"></div>
+          <div class="col-xl-2">
+            <ul style="color: white" class="ulFooter">
+              <li><strong style="color: yellow">Vietnam Airlines</strong></li>
+              <br />
+              <li>Giới thiêu công ty</li>
+              <li>Đội bay</li>
+              <li>Đối tác</li>
+              <li>Thông tin truyền thông</li>
+              <li>Trách nhiệm xã hội</li>
+              <li>Quan hệ cổ đông</li>
+              <li>Thông tin đấu thầu</li>
+            </ul>
+          </div>
+          <div class="col-xl-2">
+            <ul style="color: white" class="ulFooter">
+              <li><strong style="color: yellow">Pháp lý</strong></li>
+              <br />
+              <li>Các điều kiện và điều khoản</li>
+              <li>Điều lệ vận chuyển</li>
+              <li>Bảo mật thông tin</li>
+              <li>Quy chế hoạt động sàn TMĐT</li>
+            </ul>
+          </div>
+          <div class="col-xl-2">
+            <ul style="color: white" class="ulFooter">
+              <li><strong style="color: yellow">Hỗ trợ</strong></li>
+              <li>Góp ý dịch vụ</li>
+              <li>Trung tâm trợ giúp</li>
+              <li>Chính sách bảo vệ hành khách</li>
+            </ul>
+          </div>
+          <div class="col-xl-2">
+            <ul style="color: white" class="ulFooter">
+              <li><strong style="color: yellow">Vận tải hàng hóa</strong></li>
+              <li>Trang web hàng hóa</li>
+            </ul>
+          </div>
+          <div class="col-xl-2">
+            <ul style="color: white" class="ulFooter">
+              <li>
+                <strong style="color: yellow">Thông tin hữu ích</strong>
+              </li>
+              <li>Cẩm nang mua vé online</li>
+              <li>Quảng cáo với vietnam airlines</li>
+            </ul>
+          </div>
+          <div class="col-xl-1"></div>
+        </div>
+        <div class="row" style="background-color: rgb(32, 100, 178)">
+          <hr style="color: white; margin: 30px" />
+          <center>
+            <p style="color: white">
+              © 2019 Vietnam Airlines JSC<br />
+              Tổng công ty Hàng không Việt Nam - CTCP. Số 200 Nguyễn Sơn, P.Bồ
+              Đề, Q.Long Biên, Hà Nội. <br />
+              Điện thoại:
+              <a href="tel:+84395406998" class="footertel">(+84-24) 38272289</a
+              >. Fax: (+84-24) 38722375.<br />
+              Giấy chứng nhận đăng ký doanh nghiệp, mã số doanh nghiệp:
+              0100107518, đăng ký lần đầu ngày 30/6/2010, đăng ký thay đổi lần
+              thứ 9 ngày 12/01/2022, cấp bởi Sở KHĐT thành phố Hà Nội.
+            </p>
+          </center>
+        </div>
+      </footer>
+    </div>
+    <script>
+      //nơi để điều hướng route
+      angular.module("myApp", ["ngRoute"]).config(function ($routeProvider) {
+        $routeProvider
+          .when("/", {
+            templateUrl: "view/trangchu.html",
+            controller: trangchuController,
+          })
+          .when("/gioiThieu", {
+            templateUrl: "view/lienhe.html",
+            controller: lienheCOntroller,
+          });
+      });
+    </script>
+  </body>
+</html>
