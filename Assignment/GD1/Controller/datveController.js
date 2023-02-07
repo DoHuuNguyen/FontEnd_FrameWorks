@@ -9,6 +9,8 @@ window.datveController = function ($scope) {
       $scope.cccdE = "*Bạn chưa nhập*";
     } else if ($scope.sdt === undefined) {
       $scope.sdtE = "*Bạn chưa nhập*";
+    } else if ($scope.ngaysinh === undefined) {
+      $scope.ngaysinhE = "*Bạn chưa nhập*";
     } else if ($scope.hanhly === undefined) {
       $scope.hanhlyE = "*Bạn chưa nhập*";
     } else {
@@ -17,6 +19,7 @@ window.datveController = function ($scope) {
         "Chúng tôi sẽ gửi lại thông báo cho bạn",
         "success"
       );
+      // location.reload();
     }
   };
 };

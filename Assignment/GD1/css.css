@@ -50,6 +50,7 @@ ul{
     border: solid;
     border-radius: 20px;
     background-image: url(view/img/backgroud.jpg);
+    margin-top: 30px;
 }
 .banLanhDao{
     margin: 10px;
