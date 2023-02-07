@@ -23,6 +23,12 @@
       crossorigin="anonymous"
     />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <script src="Controller/trangchuController.js"></script>
+    <script src="Controller/gioiThieuController.js"></script>
+    <script src="Controller/lienheController.js"></script>
+    <script src="Controller/datveController.js"></script>
     <script src="js.js"></script>
     <link rel="stylesheet" href="css.css" />
     <title>Document</title>
@@ -67,13 +73,13 @@
                     >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="lienhe.html">Liên hệ</a>
+                    <a class="nav-link" href="#!/gioiThieu">Giới Thiệu</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="datve.html">Đặt Vé</a>
+                    <a class="nav-link" href="#!/lienhe">Liên hệ</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link"></a>
+                    <a class="nav-link" href="#!/datve">Đặt Vé</a>
                   </li>
                 </ul>
               </nav>
@@ -83,7 +89,7 @@
       </div>
       <header></header>
       <main>
-        <div ng-views></div>
+        <div ng-view></div>
       </main>
       <footer>
         <div class="row" style="background-color: antiquewhite">
@@ -189,8 +195,16 @@
             controller: trangchuController,
           })
           .when("/gioiThieu", {
+            templateUrl: "view/gioiThieu.html",
+            controller: gioiThieuController,
+          })
+          .when("/lienhe", {
             templateUrl: "view/lienhe.html",
-            controller: lienheCOntroller,
+            controller: lienheController,
+          })
+          .when("/datve", {
+            templateUrl: "view/datve.html",
+            controller: datveController,
           });
       });
     </script>

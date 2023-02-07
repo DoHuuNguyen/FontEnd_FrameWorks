@@ -1,3 +1,3 @@
 window.trangchuController = function ($scope) {
-  $scope.title = "Hi chào các cậu";
+  $scope.title = "đây là trang chủ";
 };

@@ -36,3 +36,53 @@ ul{
 .ulFooter>li:hover{
     color: yellow;
 }
+#khoi{
+    border-style: solid;
+    border-color: red;
+    border-radius: 20px;
+    margin: 10px;
+}
+#khoi img{
+    border-radius: 20px;
+}
+/* Giới thiệu */
+.container{
+    border: solid;
+    border-radius: 20px;
+    background-image: url(view/img/backgroud.jpg);
+}
+.banLanhDao{
+    margin: 10px;
+    border: 1px solid #c1adef;
+    border-radius: 20px;
+    background-color: snow;
+    width: 800px;
+}
+.chuTich{
+    background-color: bisque;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.lichsu{
+    margin: 10px;
+    border: 1px solid #c1adef;
+    border-radius: 20px;
+    background-color: snow;
+    width: 1100px;
+}
+.lichsu h2{
+    margin: 20px;
+}
+#noidung p{
+    text-align: left;
+    margin: 20px;
+}
+/* Lien he */
+.container-lienhe{
+    margin: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.phom{
+    width: 800px;
+    text-align: left;
+}
