@@ -19,7 +19,9 @@ window.datveController = function ($scope) {
         "Chúng tôi sẽ gửi lại thông báo cho bạn",
         "success"
       );
-      // location.reload();
     }
+  };
+  $scope.reset = function () {
+    location.reload();
   };
 };
