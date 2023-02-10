@@ -1,0 +1,88 @@
+<form
+  style="border: 1px solid rgb(53, 2, 2); margin: 30px; border-radius: 10px"
+>
+  <div style="margin: 10px">
+    <div class="mb-3 row">
+      <label for="inputPassword" class="col-sm-2 col-form-label"
+        ><strong>Tên</strong></label
+      >
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          ng-model="inputValue.ten"
+        /><br />
+        <label style="color: red" ng-if="kiemtradulieu.ten==true"
+          >Bạn chưa nhập</label
+        >
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="inputPassword" class="col-sm-2 col-form-label"
+        ><strong>Năm Sinh</strong></label
+      >
+      <div class="col-sm-10">
+        <input
+          type="number"
+          class="form-control"
+          ng-model="inputValue.namsinh"
+        />
+        <br />
+        <label style="color: red" ng-if="kiemtradulieu.namsinh==true"
+          >Bạn chưa nhập </label
+        ><label style="color: red" ng-if="kiemtradulieu.namsinhss==true">
+          Năm sinh của bạn đang nhỏ hơn 0</label
+        >
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="inputPassword" class="col-sm-2 col-form-label"
+        ><strong>Địa chỉ</strong></label
+      >
+      <div class="col-sm-10">
+        <textarea
+          cols="10"
+          rows="4"
+          class="form-control"
+          ng-model="inputValue.diachi"
+        ></textarea>
+        <label style="color: red" ng-if="kiemtradulieu.diachi==true"
+          >Bạn chưa nhập</label
+        >
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-10"></div>
+      <div class="col-2">
+        <button type="button" class="btn btn-outline-success" ng-click="add()">
+          Thêm
+        </button>
+        <button type="button" class="btn btn-outline-danger" ng-click="clear()">
+          clear
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+<form
+  style="border: 1px solid rgb(53, 2, 2); margin: 30px; border-radius: 10px"
+>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Tên Khách Hàng</th>
+        <th scope="col">Năm Sinh</th>
+        <th scope="col">Địa Chỉ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="pt in dskh">
+        <th>{{pt.id}}</th>
+        <td>{{pt.ten}}</td>
+        <td>{{pt.namsinh}}</td>
+        <td>{{pt.diachi}}</td>
+      </tr>
+    </tbody>
+  </table>
+</form>

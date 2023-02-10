@@ -1,0 +1,26 @@
+<div class="">
+  <form action="">
+    Tiêu đề <input type="text" ng-model="inputValue.tieude" /><br />
+    <p style="color: red" ng-if="kiemtradl.tieude == true">Bạn chưa nhập</p>
+    Mô tả <input type="text" ng-model="inputValue.mota" /> <br />
+    <p style="color: red" ng-if="kiemtradl.mota == true">Bạn chưa nhập</p>
+    <button ng-click="onSubmit()">save</button>
+  </form>
+  <br />
+  <table class="table" border="1">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">tieude</th>
+        <th scope="col">mota</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="pt in danhsachtintuc">
+        <th>{{pt.id}}</th>
+        <td>{{pt.tieude}}</td>
+        <td>{{pt.mota}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
