@@ -14,11 +14,13 @@ window.khachhang = function ($scope) {
       namsinh: "",
       diachi: "",
     };
+    $scope.editID = 0;
     $scope.kiemtradulieu.ten = false;
     $scope.kiemtradulieu.namsinh = false;
     $scope.kiemtradulieu.diachi = false;
     $scope.kiemtradulieu.namsinhss = false;
   };
+  //hàm thêm
   $scope.add = function () {
     //để trống
 
@@ -30,10 +32,27 @@ window.khachhang = function ($scope) {
     } else if (!$scope.inputValue || !$scope.inputValue.diachi) {
       $scope.kiemtradulieu.namsinh = false;
       $scope.kiemtradulieu.diachi = true;
-    } else if ($scope.inputValue.namsinh <= 0) {
+    } else if (parseInt($scope.inputValue.namsinh) <= 0) {
       $scope.kiemtradulieu.diachi = false;
       $scope.kiemtradulieu.namsinhss = true;
     } else {
+      //sửa
+      var editID = $scope.editID;
+      //nêu như có edit id sẽ sửaa
+      if (editID) {
+        //sử lý sửa
+
+        console.log(editID);
+        for (var i = 0; i < $scope.dskh.length; i++) {
+          if ($scope.dskh[i].id == editID) {
+            $scope.dskh[i].ten = $scope.inputValue.ten;
+            $scope.dskh[i].namsinh = $scope.inputValue.namsinh;
+            $scope.dskh[i].diachi = $scope.inputValue.diachi;
+          }
+        }
+        $scope.setText();
+        return;
+      }
       //thêm mới
       var ds = $scope.dskh;
       var newId = ds.length > 0 ? ds[ds.length - 1].id + 1 : 1;
@@ -50,5 +69,40 @@ window.khachhang = function ($scope) {
   };
   $scope.clear = function () {
     $scope.setText();
+  };
+  //hàm sửa
+  $scope.onEdit = function (editID) {
+    $scope.editID = editID;
+    var editItem = {
+      ten: "",
+      namsinh: "",
+      diachi: "",
+    };
+    for (var i = 0; i < $scope.dskh.length; i++) {
+      if ($scope.dskh[i].id == editID) {
+        editItem.ten = $scope.dskh[i].ten;
+        editItem.namsinh = $scope.dskh[i].namsinh;
+        editItem.diachi = $scope.dskh[i].diachi;
+      }
+    }
+    //hiển thị lên input
+    $scope.inputValue = {
+      ten: editItem.ten,
+      namsinh: Number(editItem.namsinh),
+      diachi: editItem.diachi,
+    };
+  };
+  $scope.onDelete = function (deleteID) {
+    var confirm = window.confirm("Bạn có muốn xóa Khum ?");
+    if (confirm) {
+      $scope.dskh = $scope.dskh.filter(function (item) {
+        return item.id !== deleteID;
+      });
+    }
+    for (var i = 0; i < $scope.dskh.length; i++) {
+      if ($scope.dskh[i].id == editID) {
+        RemoveElementFromObjectArray(editID);
+      }
+    }
   };
 };

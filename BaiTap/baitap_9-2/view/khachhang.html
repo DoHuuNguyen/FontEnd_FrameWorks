@@ -57,7 +57,7 @@
         <button type="button" class="btn btn-outline-success" ng-click="add()">
           Thêm
         </button>
-        <button type="button" class="btn btn-outline-danger" ng-click="clear()">
+        <button type="button" class="btn btn-outline-info" ng-click="clear()">
           clear
         </button>
       </div>
@@ -74,6 +74,7 @@
         <th scope="col">Tên Khách Hàng</th>
         <th scope="col">Năm Sinh</th>
         <th scope="col">Địa Chỉ</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -82,6 +83,22 @@
         <td>{{pt.ten}}</td>
         <td>{{pt.namsinh}}</td>
         <td>{{pt.diachi}}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-outline-warning"
+            ng-click="onEdit(pt.id)"
+          >
+            Sửa
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-danger"
+            ng-click="onDelete(pt.id)"
+          >
+            Xóa
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>
