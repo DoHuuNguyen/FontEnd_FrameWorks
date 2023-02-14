@@ -26,6 +26,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
     <script src="controller/khachhangcontroller.js"></script>
+    <script src="controller/sinhviencontroller.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -52,7 +53,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#!/sinhvien">Sinh Viên</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Pricing</a>
@@ -70,10 +71,15 @@
     </div>
     <script>
       angular.module("appRoute", ["ngRoute"]).config(function ($routeProvider) {
-        $routeProvider.when("/", {
-          templateUrl: "view/khachhang.html",
-          controller: khachhang,
-        });
+        $routeProvider
+          .when("/", {
+            templateUrl: "view/khachhang.html",
+            controller: khachhang,
+          })
+          .when("/sinhvien", {
+            templateUrl: "view/sinhvien.html",
+            controller: sinhviencontroller,
+          });
       });
     </script>
   </body>
