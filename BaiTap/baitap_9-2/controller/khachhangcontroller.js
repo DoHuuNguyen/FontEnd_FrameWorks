@@ -1,11 +1,20 @@
-window.khachhang = function ($scope) {
-  $scope.dskh = [
-    { id: 1, ten: "Đỗ Hữu Nguyện", namsinh: "2003", diachi: "tuyên quang" },
-  ];
+window.khachhang = function ($scope, $http) {
+  // $scope.dskh = [
+  //   { id: 1, ten: "Đỗ Hữu Nguyện", namsinh: "2003", diachi: "tuyên quang" },
+  // ];
+  var apiURL = "http://localhost:3000/sinhVien";
+  $scope.getData = function () {
+    $http.get(apiURL).then(function (response) {
+      //sau khi đón được dữ liệu về
+      $scope.dskh = response.data;
+    });
+  };
+  $scope.getData();
   $scope.kiemtradulieu = {
     ten: false,
     namsinh: false,
     namsinhss: false,
+    
     diachi: false,
   };
   $scope.setText = function () {
