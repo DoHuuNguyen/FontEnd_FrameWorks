@@ -1,4 +1,4 @@
-window.khachhang = function ($scope, $http) {
+window.khachhang = function ($scope, $http, $location) {
   // $scope.dskh = [
   //   { id: 1, ten: "Đỗ Hữu Nguyện", namsinh: "2003", diachi: "tuyên quang" },
   // ];
@@ -14,7 +14,7 @@ window.khachhang = function ($scope, $http) {
     ten: false,
     namsinh: false,
     namsinhss: false,
-    
+
     diachi: false,
   };
   $scope.setText = function () {
@@ -50,29 +50,48 @@ window.khachhang = function ($scope, $http) {
       //nêu như có edit id sẽ sửaa
       if (editID) {
         //sử lý sửa
-
-        console.log(editID);
-        for (var i = 0; i < $scope.dskh.length; i++) {
-          if ($scope.dskh[i].id == editID) {
-            $scope.dskh[i].ten = $scope.inputValue.ten;
-            $scope.dskh[i].namsinh = $scope.inputValue.namsinh;
-            $scope.dskh[i].diachi = $scope.inputValue.diachi;
+        // for (var i = 0; i < $scope.dskh.length; i++) {
+        //   if ($scope.dskh[i].id == editID) {
+        //     $scope.dskh[i].ten = $scope.inputValue.ten;
+        //     $scope.dskh[i].namsinh = $scope.inputValue.namsinh;
+        //     $scope.dskh[i].diachi = $scope.inputValue.diachi;
+        //   }
+        // }
+        var updateItem = {
+          ten: $scope.inputValue.ten,
+          namsinh: $scope.inputValue.namsinh,
+          diachi: $scope.inputValue.diachi,
+        };
+        $http.put(`${apiURL}/${editID}`, updateItem).then(function (response) {
+          if (response.status == 200) {
+            $location.path("#!/");
+            $scope.getData();
           }
-        }
+        });
         $scope.setText();
         return;
       }
       //thêm mới
-      var ds = $scope.dskh;
-      var newId = ds.length > 0 ? ds[ds.length - 1].id + 1 : 1;
+      // var ds = $scope.dskh;
+      // var newId = ds.length > 0 ? ds[ds.length - 1].id + 1 : 1;
       var newItem = {
-        id: newId,
+        // id: newId,
         ten: $scope.inputValue.ten,
         namsinh: $scope.inputValue.namsinh,
         diachi: $scope.inputValue.diachi,
       };
+      $http
+        .post(
+          apiURL, //đường dẫn api
+          newItem // dữ liệu cần them
+        )
+        .then(function (response) {
+          // console.log(response);
+          $location.path("#!/");
+          $scope.getData();
+        });
       swal("Thêm thành công", "", "success");
-      $scope.dskh.push(newItem);
+      // $scope.dskh.push(newItem);
       $scope.setText();
     }
   };
@@ -87,31 +106,36 @@ window.khachhang = function ($scope, $http) {
       namsinh: "",
       diachi: "",
     };
-    for (var i = 0; i < $scope.dskh.length; i++) {
-      if ($scope.dskh[i].id == editID) {
-        editItem.ten = $scope.dskh[i].ten;
-        editItem.namsinh = $scope.dskh[i].namsinh;
-        editItem.diachi = $scope.dskh[i].diachi;
+    // for (var i = 0; i < $scope.dskh.length; i++) {
+    //   if ($scope.dskh[i].id == editID) {
+    //     editItem.ten = $scope.dskh[i].ten;
+    //     editItem.namsinh = $scope.dskh[i].namsinh;
+    //     editItem.diachi = $scope.dskh[i].diachi;
+    //   }
+    // }
+    $http.get(`${apiURL}/${editID}`).then(function (response) {
+      if (response.status == 200) {
+        $scope.inputValue = {
+          ten: response.data.ten,
+          namsinh: Number(response.data.namsinh),
+          diachi: response.data.diachi,
+        };
       }
-    }
+    });
     //hiển thị lên input
-    $scope.inputValue = {
-      ten: editItem.ten,
-      namsinh: Number(editItem.namsinh),
-      diachi: editItem.diachi,
-    };
   };
   $scope.onDelete = function (deleteID) {
     var confirm = window.confirm("Bạn có muốn xóa Khum ?");
     if (confirm) {
-      $scope.dskh = $scope.dskh.filter(function (item) {
-        return item.id !== deleteID;
+      $http.delete(`${apiURL}/${deleteID}`).then(function (response) {
+        $location.path("#!/");
+        $scope.getData();
       });
     }
-    for (var i = 0; i < $scope.dskh.length; i++) {
-      if ($scope.dskh[i].id == editID) {
-        RemoveElementFromObjectArray(editID);
-      }
-    }
+    // for (var i = 0; i < $scope.dskh.length; i++) {
+    //   if ($scope.dskh[i].id == editID) {
+    //     RemoveElementFromObjectArray(editID);
+    //   }
+    // }
   };
 };
