@@ -3,6 +3,7 @@ window.khachhang = function ($scope, $http, $location) {
   //   { id: 1, ten: "Đỗ Hữu Nguyện", namsinh: "2003", diachi: "tuyên quang" },
   // ];
   var apiURL = "http://localhost:3000/sinhVien";
+
   $scope.getData = function () {
     $http.get(apiURL).then(function (response) {
       //sau khi đón được dữ liệu về

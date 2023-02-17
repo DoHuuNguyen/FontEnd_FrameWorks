@@ -13,7 +13,7 @@
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            ng-model="name"
+            ng-model="inputValue.hovaten"
           />
           <label style="color: red">{{nameE}}</label>
         </div>
@@ -28,7 +28,7 @@
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            ng-model="cccd"
+            ng-model="inputValue.cccd"
           />
           <label style="color: red">{{cccdE}}</label>
         </div>
@@ -41,7 +41,7 @@
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            ng-model="email"
+            ng-model="inputValue.email"
           />
           <label style="color: red">{{emailE}}</label>
         </div>
@@ -57,7 +57,8 @@
               type="radio"
               name="inlineRadioOptions"
               id="inlineRadio1"
-              value="option1"
+              ng-model="inputValue.gioitinh"
+              value="nam"
               checked
             />
             <label class="form-check-label" for="inlineRadio1">Nam</label>
@@ -68,7 +69,8 @@
               type="radio"
               name="inlineRadioOptions"
               id="inlineRadio2"
-              value="option2"
+              ng-model="inputValue.gioitinh"
+              value="nữ"
             />
             <label class="form-check-label" for="inlineRadio2">Nữ</label>
           </div>
@@ -78,7 +80,8 @@
               type="radio"
               name="inlineRadioOptions"
               id="inlineRadio3"
-              value="option3"
+              ng-model="inputValue.gioitinh"
+              value="khác"
             />
             <label class="form-check-label" for="inlineRadio3">Khác</label>
           </div>
@@ -94,7 +97,7 @@
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            ng-model="sdt"
+            ng-model="inputValue.sdt"
           />
           <label style="color: red">{{sdtE}}</label>
         </div>
@@ -104,11 +107,12 @@
           >Chuyến bay</label
         >
         <div class="col-sm-10">
-          <select class="form-select" aria-label="Default select example">
-            <option value="1">Hà Nội to Hồ Chí Minh</option>
-            <option value="2">Hà Nội to Đà Nẵng</option>
-            <option value="3">Hà Nội to Korea</option>
-          </select>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            ng-model="chuyenbayOp"
+            ng-options="chuyenbay.name for chuyenbayOp in dschuyenbay"
+          ></select>
         </div>
       </div>
       <div class="mb-3 row">
@@ -121,7 +125,7 @@
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            ng-model="ngaysinh"
+            ng-model="inputValue.ngaysinh"
           />
           <label style="color: red">{{ngaysinhE}}</label>
         </div>
@@ -134,7 +138,7 @@
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            ng-model="hanhly"
+            ng-model="inputValue.hanhly"
           />
           <label style="color: red">{{hanhlyE}}</label>
         </div>
