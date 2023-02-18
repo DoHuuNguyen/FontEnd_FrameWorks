@@ -15,7 +15,9 @@
             aria-describedby="emailHelp"
             ng-model="inputValue.hovaten"
           />
-          <label style="color: red">{{nameE}}</label>
+          <label style="color: red" ng-if="kiemtradulieu.hovaten==true"
+            >Bạn chưa nhập</label
+          >
         </div>
       </div>
       <div class="mb-3 row">
@@ -30,7 +32,9 @@
             aria-describedby="emailHelp"
             ng-model="inputValue.cccd"
           />
-          <label style="color: red">{{cccdE}}</label>
+          <label style="color: red" ng-if="kiemtradulieu.cccd==true"
+            >Bạn chưa nhập</label
+          >
         </div>
       </div>
       <div class="mb-3 row">
@@ -43,7 +47,9 @@
             aria-describedby="emailHelp"
             ng-model="inputValue.email"
           />
-          <label style="color: red">{{emailE}}</label>
+          <label style="color: red" ng-if="kiemtradulieu.email==true"
+            >Bạn chưa nhập</label
+          >
         </div>
       </div>
       <div class="mb-3 row">
@@ -59,7 +65,6 @@
               id="inlineRadio1"
               ng-model="inputValue.gioitinh"
               value="nam"
-              checked
             />
             <label class="form-check-label" for="inlineRadio1">Nam</label>
           </div>
@@ -99,7 +104,26 @@
             aria-describedby="emailHelp"
             ng-model="inputValue.sdt"
           />
-          <label style="color: red">{{sdtE}}</label>
+          <label style="color: red" ng-if="kiemtradulieu.sdt==true"
+            >Bạn chưa nhập</label
+          >
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label"
+          >Ngày bay</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="date"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            ng-model="inputValue.ngaybay"
+          />
+          <label style="color: red" ng-if="kiemtradulieu.ngaybay==true"
+            >Bạn chưa nhập</label
+          >
         </div>
       </div>
       <div class="mb-3 row">
@@ -111,8 +135,11 @@
             class="form-select"
             aria-label="Default select example"
             ng-model="chuyenbayOp"
-            ng-options="chuyenbay.name for chuyenbayOp in dschuyenbay"
+            ng-options="chuyenbayOp.name for chuyenbayOp in dschuyenbay"
           ></select>
+          <label style="color: red" ng-if="kiemtradulieu.chuyenbay==true"
+            >Bạn chưa chọn</label
+          >
         </div>
       </div>
       <div class="mb-3 row">
@@ -127,7 +154,9 @@
             aria-describedby="emailHelp"
             ng-model="inputValue.ngaysinh"
           />
-          <label style="color: red">{{ngaysinhE}}</label>
+          <label style="color: red" ng-if="kiemtradulieu.ngaysinh==true"
+            >Bạn chưa nhập</label
+          >
         </div>
       </div>
       <div class="mb-3 row">
@@ -140,7 +169,9 @@
             aria-describedby="emailHelp"
             ng-model="inputValue.hanhly"
           />
-          <label style="color: red">{{hanhlyE}}</label>
+          <label style="color: red" ng-if="kiemtradulieu.hanhly==true"
+            >Bạn chưa nhập</label
+          >
         </div>
       </div>
       <div class="mb-3 row">
@@ -148,11 +179,15 @@
           >Hình thức TT</label
         >
         <div class="col-sm-10">
-          <select class="form-select" aria-label="Default select example">
-            <option value="1">Chuyển khoản</option>
-            <option value="2">Tiền mặt</option>
-            <option value="3">Thẻ tín dụng</option>
-          </select>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            ng-model="htttOp"
+            ng-options="htttOp.name for htttOp in dshttt"
+          ></select>
+          <label style="color: red" ng-if="kiemtradulieu.httt==true"
+            >Bạn chưa chọn</label
+          >
         </div>
       </div>
       <div class="col-auto">

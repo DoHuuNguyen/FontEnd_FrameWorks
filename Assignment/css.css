@@ -22,7 +22,6 @@ ul>li>a{
 /* Header */
 header{
     height: 570px;
-    background-image: url("img/header1.jpg");
     background-size: 100%;
 }
 header>img{
