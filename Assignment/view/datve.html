@@ -35,6 +35,9 @@
           <label style="color: red" ng-if="kiemtradulieu.cccd==true"
             >Bạn chưa nhập</label
           >
+          <label style="color: red" ng-if="kiemtradulieu.ccCheck==true"
+            >Sai định dạng</label
+          >
         </div>
       </div>
       <div class="mb-3 row">
@@ -107,23 +110,9 @@
           <label style="color: red" ng-if="kiemtradulieu.sdt==true"
             >Bạn chưa nhập</label
           >
-        </div>
-      </div>
-      <div class="mb-3 row">
-        <label for="staticEmail" class="col-sm-2 col-form-label"
-          >Ngày bay</label
-        >
-        <div class="col-sm-10">
-          <input
-            type="date"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            ng-model="inputValue.ngaybay"
-          />
-          <label style="color: red" ng-if="kiemtradulieu.ngaybay==true"
-            >Bạn chưa nhập</label
-          >
+          <label style="color: red" ng-if="kiemtradulieu.sdtCheck==true"
+            >Sai định dạng
+          </label>
         </div>
       </div>
       <div class="mb-3 row">
@@ -134,7 +123,7 @@
           <select
             class="form-select"
             aria-label="Default select example"
-            ng-model="chuyenbayOp"
+            ng-model="inputValue.chuyenbayOp"
             ng-options="chuyenbayOp.name for chuyenbayOp in dschuyenbay"
           ></select>
           <label style="color: red" ng-if="kiemtradulieu.chuyenbay==true"
@@ -144,11 +133,11 @@
       </div>
       <div class="mb-3 row">
         <label for="staticEmail" class="col-sm-2 col-form-label"
-          >Ngày sinh</label
+          >Năm sinh</label
         >
         <div class="col-sm-10">
           <input
-            type="date"
+            type="number"
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
@@ -182,7 +171,7 @@
           <select
             class="form-select"
             aria-label="Default select example"
-            ng-model="htttOp"
+            ng-model="inputValue.htttOp"
             ng-options="htttOp.name for htttOp in dshttt"
           ></select>
           <label style="color: red" ng-if="kiemtradulieu.httt==true"
@@ -199,5 +188,56 @@
         </button>
       </div>
     </form>
+    <div
+      style="border: 1px solid rgb(53, 2, 2); margin: 1px; border-radius: 10px"
+    >
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">HỌ VÀ TÊN</th>
+            <th scope="col">CCCD/CMT</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">GIỚI TÍNH</th>
+            <th scope="col">NĂM SINH</th>
+            <th scope="col">SỐ ĐIỆN THOẠI</th>
+            <th scope="col">CHUYẾN BAY</th>
+            <th scope="col">HÀNH LÝ</th>
+            <th scope="col">HÌNH THỨC THANH TOÁN</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="pt in dsve">
+            <td>{{pt.id}}</td>
+            <td>{{pt.hovaten}}</td>
+            <td>{{pt.cccd}}</td>
+            <td>{{pt.email}}</td>
+            <td>{{pt.gioitinh}}</td>
+            <td>{{pt.ngaysinh}}</td>
+            <td>{{pt.sdt}}</td>
+            <td>{{pt.chuyenbay}}</td>
+            <td>{{pt.hanhly}}</td>
+            <td>{{pt.hinhthucthanhtoan}}</td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-outline-warning"
+                ng-click="onEdit(pt.id)"
+              >
+                Sửa
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-danger"
+                ng-click="onDelete(pt.id)"
+              >
+                Xóa
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </center>
 </div>

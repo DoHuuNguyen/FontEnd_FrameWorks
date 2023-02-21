@@ -6,7 +6,7 @@
     color: red;
 }
 .dongduoi{
-    font-size: 30px;
+    font-size: 20px;
 }
 ul>li>a:hover{
     background-color: wheat;
@@ -17,18 +17,10 @@ ul>li>a{
 #imgLogo>img{
     margin: 20px;
     height: 90px;
+    
 }
 /* Hết nav */
 /* Header */
-header{
-    height: 570px;
-    background-size: 100%;
-}
-header>img{
-    margin: 5%;
-    width: 90%;
-    height: 700px;
-}
 ul{
     list-style-type:none ;
 }
