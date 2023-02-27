@@ -1,0 +1,125 @@
+<form style="border: 1px solid black; border-radius: 20px; margin: 20px">
+  <div style="margin: 10px">
+    <div class="mb-3 row">
+      <label for="staticEmail" class="col-sm-2 col-form-label">Tên</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          id="text"
+          ng-model="input.ten"
+        />
+        <label style="color: red" ng-if="kiemtra.ten==true"
+          >Bạn chưa nhập</label
+        >
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="staticEmail" class="col-sm-2 col-form-label">Năm sinh</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          id="text"
+          ng-model="input.namsinh"
+        />
+        <label style="color: red" ng-if="kiemtra.namsinh==true"
+          >Bạn chưa nhập</label
+        ><label style="color: red" ng-if="kiemtra.namsinhCheck==true"
+          >Năm sinh phải là số Và bạn lớn hơn hoặc bằng 18 tuổi</label
+        >
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="staticEmail" class="col-sm-2 col-form-label">Giới Tính</label>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="exampleRadios"
+            id="exampleRadios1"
+            value="Nam"
+            ng-model="input.gioitinh"
+          />
+          <label class="form-check-label" for="exampleRadios1"> Nam </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="exampleRadios"
+            id="exampleRadios2"
+            ng-model="input.gioitinh"
+            value="Nữ"
+          />
+          <label class="form-check-label" for="exampleRadios2"> Nữ </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="staticEmail" class="col-sm-2 col-form-label"
+        >chuyên ngành</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          id="text"
+          ng-model="input.chuyennganh"
+        />
+        <label style="color: red" ng-if="kiemtra.chuyennganh==true"
+          >Bạn chưa nhập</label
+        >
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="staticEmail" class="col-sm-2 col-form-label">Địa chỉ</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          id="text"
+          ng-model="input.diachi"
+        />
+        <label style="color: red" ng-if="kiemtra.diachi==true"
+          >Bạn chưa nhập</label
+        >
+      </div>
+    </div>
+  </div>
+</form>
+
+<div style="margin-left: 50px">
+  <button type="button" class="btn btn-outline-success" ng-click="add()">
+    ADD
+  </button>
+  <button type="button" class="btn btn-outline-warning" ng-click="update()">
+    UPDATE
+  </button>
+</div>
+<div style="margin: 20px">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">TÊN</th>
+        <th scope="col">NĂM SINH</th>
+        <th scope="col">GIỚI TÍNH</th>
+        <th scope="col">CHUYÊN NGÀNH</th>
+        <th scope="col">ĐỊA CHỈ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="sv in dssv" ng-click="chon(sv.id)">
+        <td scope="col">{{sv.id}}</td>
+        <td scope="col">{{sv.ten}}</td>
+        <td scope="col">{{sv.namsinh}}</td>
+        <td scope="col">{{sv.gioitinh}}</td>
+        <td scope="col">{{sv.chuyennganh}}</td>
+        <td scope="col">{{sv.diachi}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
